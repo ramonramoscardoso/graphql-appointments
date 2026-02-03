@@ -39,5 +39,6 @@ type Mutation {
 type Query {
   appointments: [Appointment!]!
   customer(id: String!): Customer
+  customerAppointments(customerId: String!): [Appointment!]!
   customers: [Customer!]!
 }

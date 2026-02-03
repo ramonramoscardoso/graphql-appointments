@@ -19,6 +19,12 @@ class InMemoryDatabase {
     return this.appointments;
   }
 
+  findAppointmentsByCustomerId(id: string): Appointment[] {
+    return this.appointments.filter(
+      (appointment) => appointment.customerId === id,
+    );
+  }
+
   addAppointment(appointment: Appointment): Appointment {
     this.appointments.push(appointment);
     return appointment;

@@ -8,7 +8,6 @@ import { randomUUID } from "node:crypto";
 export class CustomersResolver {
   @Query(() => [Customer])
   async customers(): Promise<Customer[]> {
-    console.log("customers()");
     return db.customers;
   }
 

@@ -20,6 +20,13 @@ export class AppointmentsResolver {
     return db.findAllAppointments();
   }
 
+  @Query(() => [Appointment])
+  async customerAppointments(
+    @Arg("customerId", () => String) id: string,
+  ): Promise<Appointment[] | undefined> {
+    return db.findAppointmentsByCustomerId(id);
+  }
+
   @Mutation(() => Appointment)
   async createAppointment(
     @Arg("data", () => CreateAppointmentInput) data: CreateAppointmentInput,
